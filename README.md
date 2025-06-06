@@ -1,2 +1,4 @@
 # IFMedical.github.io
 IFMedical, Premed Survival Guide is a curated resource hub for future physicians. From MCAT strategies and application timelines to personal experiences in research, shadowing, and volunteering, this site empowers premedical students with the tools, insight, and confidence they need to succeed. 
+IF stands for always thinking, questioning and exploring. That is the Goal. If anyone ever belives that something has violated that goal, please reach out to any website moderators; Or the developer directly at IFMedical@gmail.com
+Medical stands for Education, Basic Services and Necessary Resources are always avaible and accesable for "every thing that may have the need". That is the Goal. If anyone ever belives that something has violated that goal, please reach out to any website moderators; Or the developer directly at IFMedical@gmail.com
