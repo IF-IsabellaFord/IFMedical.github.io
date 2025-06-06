@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MCAT Success Stories</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 2rem;
+    }
+    h2 {
+      color: #005f73;
+    }
+    .axis line, .axis path {
+      stroke: #ccc;
+    }
+    .arrow {
+      stroke: #0077b6;
+      fill: none;
+      stroke-width: 4;
+      marker-end: url(#arrowhead);
+    }
+    .label {
+      font-size: 12px;
+      fill: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Interactive MCAT Success Stories</h2>
+  <svg width="900" height="400"></svg>
+  <script>
+    const data = [
+      { name: "Bella", start: 494, end: 506, months: 4, years: 1 },
+      { name: "Mia", start: 500, end: 518, months: 5, years: 0 },
+      { name: "Jay", start: 488, end: 509, months: 6, years: 2 },
+      { name: "Eli", start: 496, end: 511, months: 3, years: 3 },
+      { name: "Noor", start: 502, end: 519, months: 7, years: 0 }
+    ];
+
+    const svg = d3.select("svg"),
+          width = +svg.attr("width"),
+          height = +svg.attr("height"),
+          margin = {top: 20, right: 40, bottom: 30, left: 40};
+
+    const x = d3.scaleLinear()
+      .domain([480, 525])
+      .range([margin.left, width - margin.right]);
+
+    const y = d3.scaleBand()
+      .domain(data.map((d, i) => i))
+      .range([margin.top, height - margin.bottom])
+      .padding(0.5);
+
+    svg.append("defs").append("marker")
+      .attr("id", "arrowhead")
+      .attr("viewBox", "-0 -5 10 10")
+      .attr("refX", 10)
+      .attr("refY", 0)
+      .attr("orient", "auto")
+      .attr("markerWidth", 6)
+      .attr("markerHeight", 6)
+      .attr("xoverflow", "visible")
+      .append("svg:path")
+      .attr("d", "M 0,-5 L 10,0 L 0,5")
+      .attr("fill", "#0077b6")
+      .style("stroke","none");
+
+    svg.selectAll(".arrow")
+      .data(data)
+      .enter()
+      .append("line")
+      .attr("class", "arrow")
+      .attr("x1", d => x(d.start))
+      .attr("x2", d => x(d.end))
+      .attr("y1", (d, i) => y(i))
+      .attr("y2", (d, i) => y(i))
+      .attr("stroke-width", d => 2 + d.months);
+
+    svg.selectAll(".label")
+      .data(data)
+      .enter()
+      .append("text")
+      .attr("class", "label")
+      .attr("x", d => x(d.end) + 5)
+      .attr("y", (d, i) => y(i) + 4)
+      .text(d => `${d.name} (${d.start} → ${d.end})`);
+  </script>
+</body>
+</html>
