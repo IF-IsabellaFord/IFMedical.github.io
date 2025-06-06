@@ -43,14 +43,27 @@
       margin-top: 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    footer {
-      background-color: #005f99;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-    }
+footer {
+  background-color: #f0f8ff;
+  padding: 20px;
+  font-size: 0.95rem;
+  color: #333;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+.footer-nav ul li {
+  margin: 5px 0;
+}
+
+.footer-nav a {
+  color: #2a4d7a;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
     ul {
       text-align: left;
       display: inline-block;
@@ -118,9 +131,25 @@
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 IFMedical | Built with heart by Isabella Ford</p>
-    <p><small>This is an independent, student-led project with no external funding or sponsorship.</small></p>
-  </footer>
+<footer>
+  <hr />
+  <section class="footer-mission">
+    <p><strong>IF</strong> stands for <em>always thinking, questioning, and exploring</em>. That is the goal. If anything on this site violates that purpose, please reach out to any moderators or directly to <a href="mailto:IFMedical@gmail.com">IFMedical@gmail.com</a>.</p>
+    <p><strong>Medical</strong> stands for access — to education, basic services, and essential resources for everyone who needs them.</p>
+  </section>
+
+  <section class="footer-nav">
+    <h4>Explore IFMedical:</h4>
+    <ul style="list-style: none; padding-left: 0;">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="mcat.html">📚 MCAT Resources</a></li>
+      <li><a href="usa.html">🌎 US Hub</a></li>
+      <li><a href="get-involved/index.html">🤝 Get Involved</a></li>
+      <li><a href="contact/index.html">✉️ Contact Us</a></li>
+    </ul>
+  </section>
+
+  <p style="margin-top: 1em;">© 2025 IFMedical | Built with love by Isabella Ford</p>
+</footer>
 </body>
 </html>
