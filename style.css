@@ -97,11 +97,12 @@ footer {
   margin: 5px 0;
 }
 
-.footer-nav a {
-  color: #2a4d7a;
+footer .footer-nav a {
+  color: white;
   text-decoration: none;
 }
 
-.footer-nav a:hover {
+footer .footer-nav a:hover {
   text-decoration: underline;
 }
+
