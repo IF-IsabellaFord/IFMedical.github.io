@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MCAT Success Stories - Interactive</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0faff;
+      padding: 2rem;
+    }
+    h2 {
+      color: #0077b6;
+    }
+    select, label {
+      margin-right: 10px;
+      font-size: 14px;
+    }
+    .axis line, .axis path {
+      stroke: #ccc;
+    }
+    .arrow {
+      stroke: #0077b6;
+      fill: none;
+      stroke-width: 4;
+      marker-end: url(#arrowhead);
+    }
+    .label {
+      font-size: 12px;
+      fill: #222;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .form-section {
+      background: #e0f7fa;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h2>MCAT Success Stories</h2>
+  <p>See how others improved their MCAT score — filter by gap years after graduation:</p>
+  <label for="yearFilter">Filter by Years After Graduation:</label>
+  <select id="yearFilter">
+    <option value="all">All</option>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+
+  <svg width="950" height="420"></svg>
+
+  <div class="form-section">
+    <h3>📩 Submit Your Story</h3>
+    <p>This feature is coming soon. You'll be able to share your MCAT journey to inspire others.</p>
+  </div>
+
+  <script>
+    const allData = [
+      { name: "Bella", start: 494, end: 506, months: 4, years: 1 },
+      { name: "Mia", start: 500, end: 518, months: 5, years: 0 },
+      { name: "Jay", start: 488, end: 509, months: 6, years: 2 },
+      { name: "Eli", start: 496, end: 511, months: 3, years: 3 },
+      { name: "Noor", start: 502, end: 519, months: 7, years: 0 }
+    ];
+
+    const svg = d3.select("svg");
+    const margin = {top: 20, right: 40, bottom: 30, left: 40},
+          width = +svg.attr("width") - margin.left - margin.right,
+          height = +svg.attr("height") - margin.top - margin.bottom;
+
+    const chartGroup = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const x = d3.scaleLinear().domain([480, 525]).range([0, width]);
+    const y = d3.scaleBand().range([0, height]).padding(0.5);
+
+    svg.append("defs").append("marker")
+      .attr("id", "arrowhead")
+      .attr("viewBox", "-0 -5 10 10")
+      .attr("refX", 10)
+      .attr("refY", 0)
+      .attr("orient", "auto")
+      .attr("markerWidth", 6)
+      .attr("markerHeight", 6)
+      .attr("xoverflow", "visible")
+      .append("svg:path")
+      .attr("d", "M 0,-5 L 10,0 L 0,5")
+      .attr("fill", "#0077b6");
+
+    function update(data) {
+      y.domain(data.map((d, i) => i));
+
+      chartGroup.selectAll("line").remove();
+      chartGroup.selectAll("text").remove();
+
+      chartGroup.selectAll(".arrow")
+        .data(data)
+        .enter()
+        .append("line")
+        .attr("class", "arrow")
+        .attr("x1", d => x(d.start))
+        .attr("x2", d => x(d.end))
+        .attr("y1", (d, i) => y(i))
+        .attr("y2", (d, i) => y(i))
+        .attr("stroke-width", d => 2 + d.months);
+
+      chartGroup.selectAll(".label")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("class", "label")
+        .attr("x", d => x(d.end) + 5)
+        .attr("y", (d, i) => y(i) + 4)
+        .text(d => `${d.name} (${d.start} → ${d.end})`);
+    }
+
+    document.getElementById("yearFilter").addEventListener("change", function() {
+      const selected = this.value;
+      const filtered = selected === "all" ? allData : allData.filter(d => d.years == selected);
+      update(filtered);
+    });
+
+    update(allData);
+  </script>
+</body>
+</html>
