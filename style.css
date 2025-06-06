@@ -31,7 +31,23 @@ main {
     flex: 1;
 }
 footer {
-    background-color: #caf0f8;
-    text-align: center;
-    padding: 1em;
+  background-color: #f0f8ff;
+  padding: 20px;
+  font-size: 0.95rem;
+  color: #333;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+.footer-nav ul li {
+  margin: 5px 0;
+}
+
+.footer-nav a {
+  color: #2a4d7a;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
 }
