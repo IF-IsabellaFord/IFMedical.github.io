@@ -2,58 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MCAT Resources | Premed Survival Guide</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #005f99;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .site-title a {
+      color: white;
+      text-decoration: none;
+      font-size: 2rem;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+    footer {
+      background-color: #005f99;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    ul {
+      text-align: left;
+      display: inline-block;
+    }
+    a.inline-link {
+      color: inherit;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>MCAT Resources</h1>
+    <h1 class="site-title"><a href="index.html">IFMedical</a></h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="arizona.html">Arizona Hub</a>
+      <a href="mcat.html">MCAT Resources</a>
+      <a href="usa.html">USA Hub</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="help.html">Help</a>
     </nav>
   </header>
 
   <main>
     <section>
-      <h2>Overview</h2>
-      <p>
-        Everything you need to build an effective MCAT study plan — including free tools, high-yield
-        videos, and personal reflections from Isabella Ford, a three-time MCAT taker who improved
-        her score to 506+ despite ADHD and personal challenges.
-      </p>
+      <h2>MCAT Overview</h2>
+      <p>Everything you need to build an effective MCAT study plan — including free tools, high-yield videos, and personal reflections from Isabella Ford, a three-time MCAT taker who improved her score to 506+ despite ADHD and personal challenges.</p>
     </section>
 
     <section>
-      <h2>Interactive: Real Stories of MCAT Resilience</h2>
-      <p>
-        Scrollable timeline of how students overcame low scores, burnout, medical diagnoses, and
-        test anxiety to crush the MCAT. Submit your own story below!
-      </p>
-      <iframe
-        src="mcat_success_enhanced.html"
-        width="100%"
-        height="600px"
-        style="border:none;"
-        title="MCAT Success Visual"
-      ></iframe>
+      <h2>🎯 Interactive: Real Stories of MCAT Resilience</h2>
+      <p>Scrollable timeline of how students overcame low scores, burnout, medical diagnoses, and test anxiety to crush the MCAT. Submit your own story below!</p>
+      <iframe src="mcat_success_enhanced.html" width="100%" height="600px" style="border:none;"></iframe>
     </section>
 
     <section>
-      <h2>Ask the Premed Community</h2>
+      <h2>🗣️ Ask the Premed Community</h2>
       <form action="https://formspree.io/f/mnqevvlz" method="POST">
-        <label>Your Question: <br />
-          <textarea name="question" required></textarea>
-        </label><br />
-        <label>Email (optional): <input type="email" name="email" /></label><br />
+        <label>Your Question:<br><textarea name="question" required></textarea></label><br><br>
+        <label>Email (optional): <input type="email" name="email"></label><br><br>
         <button type="submit">Submit Question</button>
       </form>
     </section>
 
     <section>
-      <h2>Study Strategy & Timeline</h2>
+      <h2>📅 Study Strategy & Timeline</h2>
       <ul>
-        <li>3-month, 4-month, and 6-month plans</li>
+        <li>3-month, 4-month, and 6-month study plans</li>
         <li>Weekly CARS practice with Jack Westin</li>
         <li>Active recall + spaced repetition (Anki)</li>
         <li>Practice full-lengths starting 6–8 weeks out</li>
@@ -61,24 +102,26 @@
     </section>
 
     <section>
-      <h2>Video & Practice Resources (Curated)</h2>
-      <p><strong>General:</strong> <a href="https://www.youtube.com/@NinjaNerdOfficial">Ninja Nerd</a>, <a href="https://www.khanacademy.org">Khan Academy</a></p>
-      <p><strong>Gen Chem:</strong> <a href="https://www.youtube.com/watch?v=uVFCOfSuPTo">Crash Course</a>, Acid/Base <a href="https://www.khanacademy.org">Practice</a></p>
-      <p><strong>Psych/Soc:</strong> <a href="https://www.youtube.com/watch?v=eal4-A89IWY">Crash Course</a>, <a href="https://jackwestin.com">Jack Westin</a></p>
-      <p><strong>Bio/Biochem:</strong> <a href="https://www.pixorize.com">Pixorize</a>, <a href="https://www.khanacademy.org">Khan Academy</a></p>
-      <p><strong>Physics:</strong> <a href="https://www.youtube.com/watch?v=OoO5d5P0Jn4">Crash Course</a>, Optics <a href="https://blog.blueprintprep.com">Blueprint Guide</a></p>
-      <p><strong>Ochem:</strong> <a href="https://www.youtube.com/watch?v=bSMx0NS0XfY">Crash Course</a>, <a href="https://www.khanacademy.org">Khan Academy</a></p>
+      <h2>🎥 Video & Practice Resources</h2>
+      <ul>
+        <li><strong>General:</strong> <a href="https://www.youtube.com/@NinjaNerdOfficial" class="inline-link">Ninja Nerd</a>, <a href="https://www.khanacademy.org" class="inline-link">Khan Academy</a></li>
+        <li><strong>Gen Chem:</strong> <a href="https://www.youtube.com/watch?v=uVFCOfSuPTo" class="inline-link">Crash Course</a>, <a href="https://www.khanacademy.org" class="inline-link">Acid/Base Practice</a></li>
+        <li><strong>Psych/Soc:</strong> <a href="https://www.youtube.com/watch?v=eal4-A89IWY" class="inline-link">Crash Course</a>, <a href="https://jackwestin.com" class="inline-link">Jack Westin</a></li>
+        <li><strong>Bio/Biochem:</strong> <a href="https://www.pixorize.com" class="inline-link">Pixorize</a>, <a href="https://www.khanacademy.org" class="inline-link">Khan Academy</a></li>
+        <li><strong>Physics:</strong> <a href="https://www.youtube.com/watch?v=OoO5d5P0Jn4" class="inline-link">Crash Course</a>, <a href="https://blog.blueprintprep.com" class="inline-link">Blueprint Optics Guide</a></li>
+        <li><strong>Ochem:</strong> <a href="https://www.youtube.com/watch?v=bSMx0NS0XfY" class="inline-link">Crash Course</a>, <a href="https://www.khanacademy.org" class="inline-link">Khan Academy</a></li>
+      </ul>
     </section>
 
     <section>
-      <h2>Download: Isabella's High-Yield MCAT PDF</h2>
-      <a href="MCAT High Yeild.pdf" download>📄 Click here to download the full PDF</a>
-      <!-- If your filename is "MCAT High Yield.pdf" with correct spelling, fix it above -->
+      <h2>📄 Download: Isabella's High-Yield MCAT PDF</h2>
+      <a href="MCAT High Yeild.pdf" download class="inline-link">Click here to download the full PDF</a>
     </section>
   </main>
 
   <footer>
-    <p>Created by IFMedical • 2025</p>
+    <p>© 2025 IFMedical | Built with heart by Isabella Ford</p>
+    <p><small>This is an independent, student-led project with no external funding or sponsorship.</small></p>
   </footer>
 </body>
 </html>
