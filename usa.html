@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>USA Hub | IFMedical</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f8ff;
+    }
+    header, footer {
+      background-color: #005f99;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    header h1 a {
+      color: white;
+      text-decoration: none;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+    .map-container {
+      margin-top: 2rem;
+    }
+    .map-container img {
+      width: 90%;
+      max-width: 1000px;
+      border: 4px solid #005f99;
+      border-radius: 12px;
+    }
+    footer p {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">IFMedical</a></h1>
+    <nav>
+      <a href="mcat.html">MCAT Resources</a>
+      <a href="us_hub.html">USA Hub</a>
+      <a href="get_involved.html">Get Involved</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="help.html">Help</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Explore Resources by State</h2>
+    <p>Click on your state to find premed-specific opportunities like shadowing, research, clinical jobs, and volunteer programs.</p>
+
+    <div class="map-container">
+      <img src="A_2D_digital_graphic_design_map_of_the_United_Stat.png" usemap="#usmap" alt="USA clickable map" />
+
+      <map name="usmap">
+        <area shape="rect" coords="100,260,160,300" href="arizona.html" alt="Arizona">
+        <area shape="rect" coords="60,200,110,240" href="california.html" alt="California">
+        <area shape="rect" coords="150,150,200,190" href="colorado.html" alt="Colorado">
+        <area shape="rect" coords="300,180,350,220" href="texas.html" alt="Texas">
+        <!-- Add more clickable areas based on final graphic layout -->
+      </map>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 IFMedical | This project is entirely personal with no external funding — built through passion and persistence by Isabella Ford.</p>
+  </footer>
+</body>
+</html>
