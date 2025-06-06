@@ -1,101 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Arizona Premed Hub | IFMedical</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Arizona Hub | IFMedical</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .site-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Arizona Premed Hub</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="mcat.html">MCAT Resources</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Welcome to the Arizona Hub</h2>
-            <p>This page is dedicated to helping Arizona-based premed students discover local opportunities for volunteering, clinical experience, research, and shadowing. Curated by Isabella Ford, this is your one-stop shop for getting hands-on experience near ASU, UArizona, and across the Valley.</p>
-        </section>
+  <header>
+    <h1 class="site-title"><a href="index.html">IFMedical</a></h1>
+    <nav>
+      <a href="mcat.html">MCAT Resources</a>
+      <a href="arizona.html">Arizona Hub</a>
+    </nav>
+  </header>
 
-        <section>
-            <h2>🔥 High-Yield Arizona Programs</h2>
-            <ul>
-                <li><strong>Banner Baywood Volunteer Program</strong> – Mesa, AZ</li>
-                <li><strong>Maricopa County Medical Examiner</strong> – Forensic internship & volunteering</li>
-                <li><strong>Mayo Clinic Plummer Scholars</strong> – Application support & mentorship</li>
-                <li><strong>Native Health Volunteer</strong> – Serving Indigenous communities</li>
-                <li><strong>Care 7 Crisis Response</strong> – Ride-along EMT exposure in Tempe</li>
-                <li><strong>Arizona Science Center & Natural History Museum</strong> – Science education outreach</li>
-                <li><strong>Hospice of the Valley</strong> – New Song grief support and patient care</li>
-            </ul>
-        </section>
+  <main>
+    <section>
+      <h2>🔎 Arizona Hub</h2>
+      <p>Explore opportunities in Arizona for clinical experience, community service, shadowing, and preparing to apply to medical school — all in one place.</p>
+    </section>
 
-        <section>
-            <h2>🗂️ Filter by Category</h2>
-            <ul>
-                <li><a href="#clinical">Clinical Volunteering</a></li>
-                <li><a href="#shadowing">Shadowing</a></li>
-                <li><a href="#research">Research Opportunities</a></li>
-                <li><a href="#nonclinical">Community Volunteering</a></li>
-            </ul>
-        </section>
+    <section>
+      <h3>🏥 Clinical Experience</h3>
+      <ul>
+        <li>Hospital volunteer programs across major health systems</li>
+        <li>Opportunities in outpatient clinics and urgent care settings</li>
+        <li>Public health or government internships (e.g., medical examiner, county services)</li>
+      </ul>
+    </section>
 
-        <section id="clinical">
-            <h3>🏥 Clinical Volunteering</h3>
-            <ul>
-                <li>Banner Health (Baywood, University, Desert)</li>
-                <li>Native Health Clinic – Weekly patient-facing shifts</li>
-                <li>Heidi’s Village – Medical support for animals</li>
-                <li>Mayo Clinic (limited college access)</li>
-            </ul>
-        </section>
+    <section>
+      <h3>🩺 Physician Shadowing</h3>
+      <ul>
+        <li>Reach out to physicians in family medicine, surgery, or internal medicine</li>
+        <li>Use volunteer program connections to request shadowing</li>
+        <li>Consider tribal and rural health centers for unique access</li>
+      </ul>
+    </section>
 
-        <section id="shadowing">
-            <h3>🩺 Shadowing</h3>
-            <p>Contact physicians through email templates and include resume, TB test, and vaccination proof. Notable contacts:</p>
-            <ul>
-                <li>Dr. Maria Manriquez (Ob/Gyn – Banner)</li>
-                <li>Dr. Deepa Prasad (Pediatric Cardiology)</li>
-                <li>Dr. Naomi Newman (Internal Medicine)</li>
-                <li>Multiple opportunities through PHIP, ASU, and Mayo</li>
-            </ul>
-        </section>
+    <section>
+      <h3>🤝 Community & Non-Clinical Volunteering</h3>
+      <ul>
+        <li>Food banks, shelter support, and senior care facilities</li>
+        <li>Health education or mentorship programs</li>
+        <li>Crisis response or mental health hotlines (virtual or in-person)</li>
+      </ul>
+    </section>
 
-        <section id="research">
-            <h3>🔬 Research Opportunities</h3>
-            <ul>
-                <li>Dr. Shaffer & Angela Gonzales – Health equity at ASU</li>
-                <li>IHRI + DRIC + Biodesign Institute labs</li>
-                <li>Glioblastoma Honors Thesis with Carlo Maley & Kristin Swanson</li>
-                <li>Phoenix Children's – check department websites</li>
-            </ul>
-        </section>
+    <section>
+      <h3>🏫 Arizona Medical Schools</h3>
+      <ul>
+        <li>University of Arizona – Phoenix</li>
+        <li>Mayo Clinic Alix School of Medicine – Scottsdale</li>
+        <li>Creighton University – Phoenix Campus</li>
+        <li>University of Arizona – Tucson</li>
+      </ul>
+    </section>
 
-        <section id="nonclinical">
-            <h3>🌍 Non-Clinical Volunteering</h3>
-            <ul>
-                <li>Arizona Museum of Natural History & Science Center</li>
-                <li>CASS, Care 7, AmeriCorps</li>
-                <li>Hospice of the Valley – New Song Center</li>
-                <li>REACT – Refugee aid organization</li>
-            </ul>
-        </section>
+    <section>
+      <h3>📎 Downloadable Resource Packet</h3>
+      <p>Coming soon: A PDF packet with Arizona-based shadowing, volunteering, and clinical resources — curated for aspiring premeds.</p>
+    </section>
+  </main>
 
-        <section>
-            <h2>📥 Add Your Arizona Opportunity</h2>
-            <form action="https://formspree.io/f/mnqevvlz" method="POST">
-                <label>Name of Organization: <input name="organization" required></label><br>
-                <label>Location: <input name="location"></label><br>
-                <label>Details (what did you do?): <textarea name="details"></textarea></label><br>
-                <label>Email (optional): <input type="email" name="email"></label><br>
-                <button type="submit">Submit Opportunity</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>Curated by Isabella Ford • Arizona Premed Network</p>
-    </footer>
+  <footer>
+    <p>© 2025 IFMedical | Built with heart by Isabella Ford</p>
+  </footer>
 </body>
 </html>
