@@ -1,15 +1,29 @@
+/* General layout and typography */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0faff;
-    color: #222;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff; /* Matches original inline style */
+  color: #222;
+  margin: 0;
+  padding: 0;
 }
+
+/* Header and navigation */
 header {
-    background-color: #005f99;
-    padding: 1em;
-    text-align: center;
+  background-color: #005f99;
+  padding: 1rem;
+  text-align: center;
 }
+
+.site-title a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
 header nav a {
   color: white;
   background-color: navy;
@@ -22,34 +36,57 @@ header nav a {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hover effect stays slightly darker */
 header nav a:hover {
   background-color: #000066;
 }
 
-/* Active tab gets a lavender background and dark text */
 header nav a.active {
   background-color: lavender;
   color: #222;
 }
 
+/* Main content */
 main {
-    padding: 2em;
+  padding: 2rem;
+  text-align: center;
 }
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+ul {
+  text-align: left;
+  display: inline-block;
+}
+
+/* Card/grid sections (if used) */
 .grid {
-    display: flex;
-    gap: 1em;
-    margin-top: 2em;
+  display: flex;
+  gap: 1em;
+  margin-top: 2em;
 }
+
 .card {
-    background-color: white;
-    padding: 1em;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    flex: 1;
+  background-color: white;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex: 1;
 }
+
+/* Illustrations */
+.illustration img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
 footer {
-  background-color: #005f99;
+  background-color: #f0f8ff;
   padding: 20px;
   font-size: 0.95rem;
   color: #333;
