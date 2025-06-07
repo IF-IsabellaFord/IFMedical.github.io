@@ -1,4 +1,3 @@
-<!-- privacy.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,41 +6,72 @@
   <title>Legal / Privacy | IFMedical</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body { background-color: #121212; color: #f0f0f0; font-family: Arial, sans-serif; margin: 0; }
+    body { font-family: Arial, sans-serif; background-color: #121212; color: #f0f0f0; margin: 0; padding: 0; }
     header { background-color: #1f1f1f; padding: 1em; text-align: center; }
     .site-title a { text-decoration: none; color: #00b4d8; font-size: 1.8em; font-weight: bold; }
+    nav a { margin: 0 1em; color: #ccc; text-decoration: none; }
+    nav a:hover { color: white; }
     main { padding: 2em; }
     footer { background-color: #1f1f1f; color: #ccc; padding: 2em; font-size: 0.9em; }
     .footer-link { color: #ccc; text-decoration: none; transition: color 0.3s ease; }
     .footer-link:hover, .footer-link.active { color: white; font-weight: bold; }
     ul { list-style: none; padding-left: 0; }
-    li { margin: 0.25em 0; }
+    li { margin: 0.5em 0; }
   </style>
 </head>
 <body>
   <header>
     <h1 class="site-title"><a href="index.html">IFMedical</a></h1>
+    <nav>
+      <a href="about.html">About Us</a>
+      <a href="mcat.html">MCAT Resources</a>
+      <a href="usa.html">USA Hub</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="help.html">Help</a>
+      <a href="privacy.html">Legal / Privacy</a>
+      <a href="login.html">Login</a>
+    </nav>
   </header>
+
   <main>
-    <h2>Legal & Privacy Policy</h2>
-    <p><strong>Last Updated:</strong> June 2025</p>
-    <p><strong>IFMedical</strong> is an independent educational resource created to support aspiring healthcare professionals. We do not collect or sell personal data. Any information submitted via contact forms or email is kept strictly confidential and never shared with third parties.</p>
-    <p>This site does not use cookies, advertising trackers, or third-party analytics. We do not claim to offer medical advice. All content is intended for educational purposes only and should not be used to diagnose or treat medical conditions. Always consult with a licensed physician for any medical concerns.</p>
-    <p>By using this website, you agree to these terms. We reserve the right to update this policy at any time. For questions, contact us at <a href="mailto:IFMedical@gmail.com">IFMedical@gmail.com</a>.</p>
+    <section>
+      <h2>Legal & Privacy Policy</h2>
+      <p><strong>Last Updated:</strong> June 2025</p>
+      <p>IFMedical is a nonprofit educational platform created by students to support aspiring medical professionals. All resources are provided freely for educational and informational use.</p>
+
+      <h3>Privacy</h3>
+      <ul>
+        <li>We do not track, collect, or sell user data.</li>
+        <li>We do not use cookies, third-party advertising, or analytics scripts.</li>
+        <li>Information submitted via contact forms or email will only be used to respond to your inquiry and is never shared.</li>
+      </ul>
+
+      <h3>Disclaimers</h3>
+      <ul>
+        <li>IFMedical does not offer professional medical advice. Content is for informational purposes only.</li>
+        <li>Always consult a licensed physician before making any medical decisions.</li>
+        <li>We do not guarantee the accuracy or currency of all listed resources.</li>
+      </ul>
+
+      <p>If you have questions about this policy, please contact us at <a href="mailto:IFMedical@gmail.com">IFMedical@gmail.com</a>.</p>
+    </section>
   </main>
+
   <footer>
     <hr />
     <section class="footer-mission">
       <p><strong>IF</strong> stands for <em>always thinking, questioning, and exploring</em>. That is the goal. If anything on this site violates that purpose, please reach out to any moderators or directly to <a href="mailto:IFMedical@gmail.com">IFMedical@gmail.com</a>.</p>
       <p><strong>Medical</strong> stands for access — to education, basic services, and essential resources for everyone who needs them.</p>
     </section>
+
     <section class="footer-nav">
       <h4>Explore IFMedical:</h4>
       <ul>
         <li><a href="about.html" class="footer-link">About Us</a></li>
         <li><a href="mcat.html" class="footer-link">MCAT Resources</a></li>
         <li><a href="usa.html" class="footer-link">USA Hub</a></li>
-        <li><a href="repository_hub.html" class="footer-link">Repository Hub</a></li>
         <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
         <li><a href="blog.html" class="footer-link">Blog</a></li>
         <li><a href="contact.html" class="footer-link">Contact Us</a></li>
@@ -50,8 +80,10 @@
         <li><a href="login.html" class="footer-link">Login</a></li>
       </ul>
     </section>
-    <p style="margin-top: 1em;">© 2025 IFMedical | Built by Premeds, for Premeds — or anyone who may need it.</p>
+
+    <p style="margin-top: 1em;">© 2025 IFMedical | Built with love by Isabella Ford</p>
   </footer>
+
   <script>
     const currentPage = window.location.pathname.split("/").pop();
     const footerLinks = document.querySelectorAll(".footer-link");
