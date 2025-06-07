@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | IFMedical</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/main.js" type="text/javascript" defer></script>
+</head>
+<body>
+  <header-component></header-component>
+  <main>
+    <section>
+      <h2>Contact IFMedical</h2>
+      <p>Have a question, want to get involved, or just want to say hi? Fill out the form below or email us directly at <a href="mailto:IFMedical@gmail.com">IFMedical@gmail.com</a>.</p>
+    </section>
+
+    <section>
+      <form action="mailto:IFMedical@gmail.com" method="POST" enctype="text/plain">
+        <label for="name">Your Name:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+
+        <label for="email">Your Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="message">Your Message:</label><br />
+        <textarea id="message" name="message" rows="6" required></textarea><br /><br />
+
+        <button type="submit" class="button">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+<footer-component></footer-component>
+</body>
+</html>
