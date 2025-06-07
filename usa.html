@@ -5,37 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>USA Hub | IFMedical</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #121212; color: #f0f0f0; margin: 0; padding: 0; }
+    header { background-color: #1f1f1f; padding: 1em; text-align: center; }
+    .site-title a { text-decoration: none; color: #00b4d8; font-size: 1.8em; font-weight: bold; }
+    nav a { margin: 0 1em; color: #ccc; text-decoration: none; }
+    nav a:hover { color: white; }
+    main { padding: 2em; }
+    footer { background-color: #1f1f1f; color: #ccc; padding: 2em; font-size: 0.9em; }
+    .footer-link { color: #ccc; text-decoration: none; transition: color 0.3s ease; }
+    .footer-link:hover, .footer-link.active { color: white; font-weight: bold; }
+    ul { list-style: none; padding-left: 0; }
+    li { margin: 0.5em 0; }
+  </style>
 </head>
 <body>
   <header>
     <h1 class="site-title"><a href="index.html">IFMedical</a></h1>
     <nav>
+      <a href="about.html">About Us</a>
       <a href="mcat.html">MCAT Resources</a>
-      <a href="usa.html" class="active">USA Hub</a>
+      <a href="usa.html">USA Hub</a>
       <a href="get-involved.html">Get Involved</a>
+      <a href="blog.html">Blog</a>
       <a href="contact.html">Contact Us</a>
       <a href="help.html">Help</a>
+      <a href="privacy.html">Legal / Privacy</a>
+      <a href="login.html">Login</a>
     </nav>
   </header>
-  
+
   <main>
-    <h2>Explore Resources by State</h2>
-    <p>Click on your state to find premed-specific opportunities like shadowing, research, clinical jobs, and volunteer programs.</p>
+    <section>
+      <h2>USA Hub</h2>
+      <p>This section provides state-by-state directories of shadowing opportunities, clinical volunteer programs, premed advising contacts, and medical school data. Use the information to explore what’s available where you live — or where you want to go.</p>
 
-    <div class="map-container">
-      <img src="A_2D_digital_graphic_design_map_of_the_United_Stat.png" usemap="#usmap" alt="USA clickable map" />
+      <ul>
+        <li><strong>Arizona:</strong> Mayo Clinic, Banner Health, Native Health, U of A College of Medicine–Phoenix</li>
+        <li><strong>California:</strong> Scribe America, Kaiser Permanente, UC medical school stats, community clinics</li>
+        <li><strong>New York:</strong> Mount Sinai, Columbia summer programs, NYC mentorship initiatives</li>
+        <li><strong>Illinois:</strong> Rush Medical, University of Chicago, Chicago Youth Programs</li>
+        <li><strong>Texas:</strong> Houston hospitals, Baylor pipeline programs, Dell Med volunteer services</li>
+        <!-- Add more as needed -->
+      </ul>
 
-      <map name="usmap">
-        <area shape="rect" coords="100,260,160,300" href="arizona.html" alt="Arizona">
-        <area shape="rect" coords="60,200,110,240" href="california.html" alt="California">
-        <area shape="rect" coords="150,150,200,190" href="colorado.html" alt="Colorado">
-        <area shape="rect" coords="300,180,350,220" href="texas.html" alt="Texas">
-        <!-- Add more clickable areas based on final graphic layout -->
-      </map>
-    </div>
+      <p>If you have a state-specific opportunity to add, please email <a href="mailto:IFMedical@gmail.com">IFMedical@gmail.com</a>.</p>
+    </section>
   </main>
 
-  <footer>
+ <footer>
     <hr />
     <section class="footer-mission">
       <p><strong>IF</strong> stands for <em>always thinking, questioning, and exploring</em>. That is the goal. If anything on this site violates that purpose, please reach out to any moderators or directly to <a href="mailto:IFMedical@gmail.com">IFMedical@gmail.com</a>.</p>
@@ -55,5 +73,16 @@
 
     <p style="margin-top: 1em;">© 2025 IFMedical | Built with love by Isabella Ford</p>
   </footer>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const footerLinks = document.querySelectorAll(".footer-link");
+    footerLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
 </body>
 </html>
