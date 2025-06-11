@@ -5,20 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IFMedical | Premed Survival Guide</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body { font-family: Arial, sans-serif; background-color: #121212; color: #f0f0f0; margin: 0; padding: 0; }
-    header { background-color: #1f1f1f; padding: 1em; text-align: center; }
-    .site-title a { text-decoration: none; color: #00b4d8; font-size: 1.8em; font-weight: bold; }
-    nav a { margin: 0 1em; color: #ccc; text-decoration: none; }
-    nav a:hover { color: white; }
-    main { padding: 2em; }
-    .illustration img { max-width: 100%; height: auto; margin-top: 1em; }
-    footer { background-color: #1f1f1f; color: #ccc; padding: 2em; font-size: 0.9em; }
-    .footer-link { color: #ccc; text-decoration: none; transition: color 0.3s ease; }
-    .footer-link:hover, .footer-link.active { color: white; font-weight: bold; }
-    ul { list-style: none; padding-left: 0; }
-    li { margin: 0.25em 0; }
-  </style>
 </head>
 <body>
   <header>
@@ -50,7 +36,7 @@
     </section>
 
     <section>
-      <h2> What You’ll Find Here</h2>
+      <h2>What You’ll Find Here</h2>
       <ul>
         <li><strong>MCAT Resources:</strong> Study timelines, video guides, and success stories.</li>
         <li><strong>USA Hub:</strong> State-by-state shadowing, volunteering, and med school data.</li>
@@ -62,23 +48,23 @@
     </section>
 
     <section>
-      <h2> Start Exploring</h2>
-      <p><a href="mcat.html"> Go to MCAT Resources</a></p>
-      <p><a href="usa.html"> Visit the USA Hub</a></p>
+      <h2>Start Exploring</h2>
+      <p><a href="mcat.html">📚 Go to MCAT Resources</a></p>
+      <p><a href="usa.html">📍 Visit the USA Hub</a></p>
     </section>
 
     <section>
-      <h2> Support IFMedical</h2>
+      <h2>Support IFMedical</h2>
       <p>You can help keep this site free for students by supporting in these ways:</p>
       <ul>
-        <li> <a href="#">Shop with affiliate links for MCAT prep and study tools</a></li>
-        <li> <a href="#">Download high-yield guides and planners</a></li>
-        <li> <a href="#">Subscribe for weekly MCAT tips & resources</a></li>
+        <li>🛍️ <a href="#">Shop with affiliate links for MCAT prep and study tools</a></li>
+        <li>📄 <a href="#">Download high-yield guides and planners</a></li>
+        <li>✉️ <a href="#">Subscribe for weekly MCAT tips & resources</a></li>
       </ul>
     </section>
 
     <section>
-      <h2> About This Project</h2>
+      <h2>About This Project</h2>
       <p>
         IFMedical is a 100% student-created and self-funded initiative. It is built entirely by Isabella Ford with no external sponsorships, university affiliation, or corporate funding — only hours of hard work, research, and dedication to helping other future physicians.
       </p>
@@ -88,37 +74,26 @@
   <footer>
     <hr />
     <section class="footer-mission">
-      <p><strong>IF</strong> stands for <em>always thinking, questioning, and exploring</em>. That is the goal. If anything on this site violates that purpose, please reach out to any moderators or directly to <a href="mailto:IFMedical@gmail.com">IFMedical@gmail.com</a>.</p>
+      <p><strong>IF</strong> stands for <em>always thinking, questioning, and exploring</em>. If anything on this site violates that purpose, please reach out to any moderators or directly to <a href="mailto:IFMedical@gmail.com">IFMedical@gmail.com</a>.</p>
       <p><strong>Medical</strong> stands for access — to education, basic services, and essential resources for everyone who needs them.</p>
     </section>
 
     <section class="footer-nav">
       <h4>Explore IFMedical:</h4>
       <ul>
-        <li><a href="about.html" class="footer-link">About Us</a></li>
-        <li><a href="mcat.html" class="footer-link">MCAT Resources</a></li>
-        <li><a href="usa.html" class="footer-link">USA Hub</a></li>
-        <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
-        <li><a href="blog.html" class="footer-link">Blog</a></li>
-        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
-        <li><a href="help.html" class="footer-link">Help</a></li>
-        <li><a href="privacy.html" class="footer-link">Legal / Privacy</a></li>
-        <li><a href="login.html" class="footer-link">Login</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="mcat.html">MCAT Resources</a></li>
+        <li><a href="usa.html">USA Hub</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="privacy.html">Legal / Privacy</a></li>
+        <li><a href="login.html">Login</a></li>
       </ul>
     </section>
 
     <p style="margin-top: 1em;">© 2025 IFMedical | Built with love by Isabella Ford</p>
   </footer>
-
-  <script>
-    const currentPage = window.location.pathname.split("/").pop();
-    const footerLinks = document.querySelectorAll(".footer-link");
-    footerLinks.forEach(link => {
-      const href = link.getAttribute("href");
-      if (href === currentPage) {
-        link.classList.add("active");
-      }
-    });
-  </script>
 </body>
 </html>
