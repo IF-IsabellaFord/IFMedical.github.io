@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USA Hub | IFMedical</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 class="site-title"><a href="index.html">IFMedical</a></h1>
+    <nav>
+      <a href="about.html">About Us</a>
+      <a href="mcat.html">MCAT Resources</a>
+      <a href="usa.html">USA Hub</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="blog.html">Blog</a>
+      <a href="repository_hub.html">Repository Hub</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="help.html">Help</a>
+      <a href="privacy.html">Legal / Privacy</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>USA Hub</h2>
+      <p>This section provides state-by-state directories of shadowing opportunities, clinical volunteer programs, premed advising contacts, and medical school data. Use the information to explore what’s available where you live — or where you want to go.</p>
+
+      <ul>
+        <li><strong>Arizona:</strong> Mayo Clinic, Banner Health, Native Health, U of A College of Medicine–Phoenix</li>
+        <li><strong>California:</strong> Scribe America, Kaiser Permanente, UC medical school stats, community clinics</li>
+        <li><strong>New York:</strong> Mount Sinai, Columbia summer programs, NYC mentorship initiatives</li>
+        <li><strong>Illinois:</strong> Rush Medical, University of Chicago, Chicago Youth Programs</li>
+        <li><strong>Texas:</strong> Houston hospitals, Baylor pipeline programs, Dell Med volunteer services</li>
+      </ul>
+
+      <p>If you have a state-specific opportunity to add, please email <a href="mailto:IFMedical@gmail.com">IFMedical@gmail.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <hr />
+    <section class="footer-mission">
+      <p><strong>IF</strong> stands for <em>always thinking, questioning, and exploring</em>. That is the goal. If anything on this site violates that purpose, please reach out to any moderators or directly to <a href="mailto:IFMedical@gmail.com">IFMedical@gmail.com</a>.</p>
+      <p><strong>Medical</strong> stands for access — to education, basic services, and essential resources for everyone who needs them.</p>
+    </section>
+
+    <section class="footer-nav">
+      <h4>Explore IFMedical:</h4>
+      <ul>
+        <li><a href="about.html" class="footer-link">About Us</a></li>
+        <li><a href="mcat.html" class="footer-link">MCAT Resources</a></li>
+        <li><a href="usa.html" class="footer-link">USA Hub</a></li>
+        <li><a href="get-involved.html" class="footer-link">Get Involved</a></li>
+        <li><a href="blog.html" class="footer-link">Blog</a></li>
+        <li><a href="repository_hub.html" class="footer-link">Repository Hub</a></li>
+        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+        <li><a href="help.html" class="footer-link">Help</a></li>
+        <li><a href="privacy.html" class="footer-link">Legal / Privacy</a></li>
+        <li><a href="login.html" class="footer-link">Login</a></li>
+      </ul>
+    </section>
+
+    <p style="margin-top: 1em;">© 2025 IFMedical | Built with love by Isabella Ford</p>
+  </footer>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const footerLinks = document.querySelectorAll(".footer-link");
+    footerLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>

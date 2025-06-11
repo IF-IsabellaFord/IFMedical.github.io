@@ -1,16 +1,18 @@
-/* General layout and typography */
+/* Base styling */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f8ff; /* Matches original inline style */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #e6f8f9; /* light scrub blue */
   color: #222;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
-/* Header and navigation */
+/* Header */
 header {
-  background-color: #005f99;
-  padding: 1rem;
+  background-color: #003366;
+  color: white;
+  padding: 1rem 0;
   text-align: center;
 }
 
@@ -18,103 +20,60 @@ header {
   color: white;
   text-decoration: none;
   font-size: 2rem;
+  font-weight: bold;
 }
 
 nav {
   margin-top: 0.5rem;
 }
 
-header nav a {
+nav a {
   color: white;
-  background-color: navy;
-  padding: 8px 16px;
+  margin: 0 1rem;
   text-decoration: none;
   font-weight: bold;
-  margin: 0 8px;
-  border-radius: 6px;
-  display: inline-block;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-header nav a:hover {
-  background-color: #000066;
-}
-
-header nav a.active {
-  background-color: lavender;
-  color: #222;
+nav a.active {
+  text-decoration: underline;
 }
 
 /* Main content */
 main {
-  padding: 2rem;
-  text-align: center;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 51, 102, 0.05);
 }
 
 section {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
-ul {
-  text-align: left;
-  display: inline-block;
+h2, h3 {
+  color: #003366;
 }
 
-
-/* Card/grid sections (if used) */
-.grid {
-  display: flex;
-  gap: 1em;
-  margin-top: 2em;
-}
-
-.card {
-  background-color: white;
-  padding: 1em;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  flex: 1;
-}
-
-/* Illustrations */
-.illustration img {
-  max-width: 90%;
-  height: auto;
-  border-radius: 12px;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
+/* Footer */
 footer {
-  background-color: #005f99 !important;
-  padding: 20px;
-  font-size: 0.95rem;
-  color: white;
+  background-color: #d7f1f5;
   text-align: center;
-  border-top: 1px solid #004b7a;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
 }
 
-.footer-nav ul li {
-  margin: 5px 0;
-}
-
-footer .footer-nav a {
-  color: white;
-  text-decoration: none;
-}
-
-footer .footer-nav a:hover {
+footer a {
+  color: #003366;
   text-decoration: underline;
 }
 
-.footer-nav h4 {
-  margin-bottom: 0.25em; /* reduce the space below the heading */
+footer hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin-bottom: 1rem;
 }
-
-.footer-nav ul {
-  margin-top: 0; /* remove space above the list */
-}
-
   .map-marker {
     position: absolute;
     background: rgba(255, 255, 255, 0.8);
