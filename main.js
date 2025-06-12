@@ -13,6 +13,11 @@ class Header extends HTMLElement {
       basePath = match ? match[0] + '/' : '/';
     }
 
+    console.log(`Base path: ${basePath}`);
+    console.log(`Is GitHub Pages: ${isGitHubPages}`);
+    console.log(`Full path: ${fullPath}`);
+    console.log(`host: ${window.location.hostname}`);
+
 
     const pathDepth = fullPath.split('/').length - 2;
     const relativePath = '../'.repeat(pathDepth > 0 ? pathDepth : 0);
@@ -43,7 +48,9 @@ class Header extends HTMLElement {
         !originalHref.startsWith('http') &&
         !originalHref.startsWith('/')
       ) {
-        link.setAttribute('href', basePath + originalHref);
+        const path = isGitHubPages ? basePath + originalHref : relativePath + originalHref;
+        console.log(`Updating link href from ${originalHref} to ${path}`);
+        link.setAttribute('href', path);
       }
     });
 
