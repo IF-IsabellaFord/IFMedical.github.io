@@ -5,42 +5,53 @@ class Header extends HTMLElement {
   }
 
   async connectedCallback() {
-    // Load header.html
-    const response = await fetch('/components/header.html');
+    const pathDepth = window.location.pathname.split('/').length - 2; // -1 for '' before first '/', -1 to get relative depth
+    const relativePath = '../'.repeat(pathDepth > 0 ? pathDepth : 0);
+    const stylePath = relativePath + 'style.css';
+    const componentsPath = relativePath + 'components/';
+
+    const response = await fetch(componentsPath + 'header.html');
     const text = await response.text();
 
-    // Parse the loaded HTML
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = text;
 
-    // Select the template inside loaded HTML
     const template = tempDiv.querySelector('template#header-template');
     if (!template) {
       console.error('Template #header-template not found!');
       return;
     }
 
-    // Clone the template content
     const content = template.content.cloneNode(true);
 
-    // Add stylesheet link to shadow root
+    // Fix hrefs to be relative to current depth
+    const navLinks = content.querySelectorAll('nav a, .site-title a');
+    navLinks.forEach(link => {
+      const originalHref = link.getAttribute('href');
+      if (originalHref && !originalHref.startsWith('http') && !originalHref.startsWith('/')) {
+        link.setAttribute('href', relativePath + originalHref);
+      }
+    });
+
+    // Add stylesheet to shadow root
     const styleLink = document.createElement('link');
     styleLink.rel = 'stylesheet';
-    styleLink.href = '/style.css';  // use root-relative path for consistency
+    styleLink.href = stylePath;
 
     this.shadowRoot.appendChild(styleLink);
     this.shadowRoot.appendChild(content);
 
     // Highlight the active nav link
-    const currentPage = "/" + window.location.pathname.split('/').slice(1).join('/');
-    const navLinks = this.shadowRoot.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      const linkPage = link.getAttribute('href');
-      if (linkPage === currentPage || (currentPage.toLowerCase().includes("states") && linkPage == "/pages/usa.html")) {
+    const currentPage = window.location.pathname.split('/').pop().toLowerCase();
+    const shadowLinks = this.shadowRoot.querySelectorAll('nav a');
+    shadowLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href.toLowerCase().includes(currentPage)) {
         link.classList.add('active');
       }
     });
   }
+
 }
 
 class Footer extends HTMLElement {
@@ -51,23 +62,51 @@ class Footer extends HTMLElement {
 
   async connectedCallback() {
     // Load header.html
-    const response = await fetch('/components/footer.html');
+    const pathDepth = window.location.pathname.split('/').length - 2; // -1 for '' before first '/', -1 to get relative depth
+    const relativePath = '../'.repeat(pathDepth > 0 ? pathDepth : 0);
+    const stylePath = relativePath + 'style.css';
+    const componentsPath = relativePath + 'components/';
+
+    const response = await fetch(componentsPath + 'footer.html');
     const text = await response.text();
 
-    // Parse HTML into a DOM element
-    const template = document.createElement('div');
-    template.innerHTML = text;
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = text;
 
-    // Grab the template content
-    const content = template.querySelector('template').content.cloneNode(true);
+    const template = tempDiv.querySelector('template#footer-template');
+    if (!template) {
+      console.error('Template #footer-template not found!');
+      return;
+    }
 
-    // Attach stylesheet
+    const content = template.content.cloneNode(true);
+
+    // Fix hrefs to be relative to current depth
+    const navLinks = content.querySelectorAll('ul li a');
+    navLinks.forEach(link => {
+      const originalHref = link.getAttribute('href');
+      if (originalHref && !originalHref.startsWith('http') && !originalHref.startsWith('/')) {
+        link.setAttribute('href', relativePath + originalHref);
+      }
+    });
+
+    // Add stylesheet to shadow root
     const styleLink = document.createElement('link');
     styleLink.rel = 'stylesheet';
-    styleLink.href = '/style.css';
+    styleLink.href = stylePath;
 
     this.shadowRoot.appendChild(styleLink);
     this.shadowRoot.appendChild(content);
+
+    // Highlight the active nav link
+    const currentPage = window.location.pathname.split('/').pop().toLowerCase();
+    const shadowLinks = this.shadowRoot.querySelectorAll('nav a');
+    shadowLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href.toLowerCase().includes(currentPage)) {
+        link.classList.add('active');
+      }
+    });
   }
 }
 
