@@ -66,14 +66,16 @@ class Header extends HTMLElement {
     // Highlight the active nav link
     const currentPage = window.location.pathname.split('/').pop().toLowerCase();
     const shadowLinks = this.shadowRoot.querySelectorAll('nav a');
-    shadowLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      if (href.toLowerCase().includes(currentPage)) {
-        link.classList.add('active');
-      }
-    });
-  }
 
+    if (fullPath !== basePath) {
+      shadowLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href.toLowerCase().includes(currentPage)) {
+          link.classList.add('active');
+        }
+      });
+    }
+  }
 }
 
 class Footer extends HTMLElement {
@@ -134,12 +136,14 @@ class Footer extends HTMLElement {
     // Highlight the active nav link
     const currentPage = window.location.pathname.split('/').pop().toLowerCase();
     const shadowLinks = this.shadowRoot.querySelectorAll('nav a');
-    shadowLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      if (href.toLowerCase().includes(currentPage)) {
-        link.classList.add('active');
-      }
-    });
+    if (fullPath !== basePath) {
+      shadowLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href.toLowerCase().includes(currentPage)) {
+          link.classList.add('active');
+        }
+      });
+    }
   }
 }
 
