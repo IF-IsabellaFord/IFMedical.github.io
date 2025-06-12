@@ -5,10 +5,19 @@ class Header extends HTMLElement {
   }
 
   async connectedCallback() {
-    const pathDepth = window.location.pathname.split('/').length - 2; // -1 for '' before first '/', -1 to get relative depth
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const fullPath = window.location.pathname;
+    let basePath = "/";
+    if (isGitHubPages) {
+      const match = fullPath.match(/^\/[^\/]+/);
+      basePath = match ? match[0] + '/' : '/';
+    }
+    
+
+    const pathDepth = fullPath.split('/').length - 2;
     const relativePath = '../'.repeat(pathDepth > 0 ? pathDepth : 0);
-    const stylePath = relativePath + 'style.css';
-    const componentsPath = relativePath + 'components/';
+    const stylePath = basePath + 'style.css';
+    const componentsPath = basePath + 'components/';
 
     const response = await fetch(componentsPath + 'header.html');
     const text = await response.text();
@@ -62,10 +71,17 @@ class Footer extends HTMLElement {
 
   async connectedCallback() {
     // Load header.html
-    const pathDepth = window.location.pathname.split('/').length - 2; // -1 for '' before first '/', -1 to get relative depth
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const fullPath = window.location.pathname;
+    let basePath = "/";
+    if (isGitHubPages) {
+      const match = fullPath.match(/^\/[^\/]+/);
+      basePath = match ? match[0] + '/' : '/';
+    }
+    const pathDepth = fullPath.split('/').length - 2;
     const relativePath = '../'.repeat(pathDepth > 0 ? pathDepth : 0);
-    const stylePath = relativePath + 'style.css';
-    const componentsPath = relativePath + 'components/';
+    const stylePath = basePath + 'style.css';
+    const componentsPath = basePath + 'components/';
 
     const response = await fetch(componentsPath + 'footer.html');
     const text = await response.text();
