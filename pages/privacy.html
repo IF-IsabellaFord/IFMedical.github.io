@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal / Privacy | IFMedical</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script src="../main.js" type="text/javascript" defer></script>
+</head>
+<body>
+  <header-component></header-component>
+
+  <main>
+    <section>
+      <h2>Legal & Privacy Policy</h2>
+      <p><strong>Last Updated:</strong> June 2025</p>
+      <p>IFMedical is a nonprofit educational platform created by students to support aspiring medical professionals. All resources are provided freely for educational and informational use.</p>
+
+      <h3>Privacy</h3>
+      <ul>
+        <li>We do not track, collect, or sell user data.</li>
+        <li>We do not use cookies, third-party advertising, or analytics scripts.</li>
+        <li>Information submitted via contact forms or email will only be used to respond to your inquiry and is never shared.</li>
+      </ul>
+
+      <h3>Disclaimers</h3>
+      <ul>
+        <li>IFMedical does not offer professional medical advice. Content is for informational purposes only.</li>
+        <li>Always consult a licensed physician before making any medical decisions.</li>
+        <li>We do not guarantee the accuracy or currency of all listed resources.</li>
+      </ul>
+
+      <p>If you have questions about this policy, please contact us at <a href="mailto:IFMedical@gmail.com">IFMedical@gmail.com</a>.</p>
+    </section>
+  </main>
+
+  <footer-component></footer-component>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const footerLinks = document.querySelectorAll(".footer-link");
+    footerLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>
