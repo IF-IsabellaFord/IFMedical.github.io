@@ -12,7 +12,7 @@ class Header extends HTMLElement {
       const match = fullPath.match(/^\/[^\/]+/);
       basePath = match ? match[0] + '/' : '/';
     }
-    
+
 
     const pathDepth = fullPath.split('/').length - 2;
     const relativePath = '../'.repeat(pathDepth > 0 ? pathDepth : 0);
@@ -34,13 +34,19 @@ class Header extends HTMLElement {
     const content = template.content.cloneNode(true);
 
     // Fix hrefs to be relative to current depth
+    // Fix hrefs to include basePath when needed (especially for GitHub Pages)
     const navLinks = content.querySelectorAll('nav a, .site-title a');
     navLinks.forEach(link => {
       const originalHref = link.getAttribute('href');
-      if (originalHref && !originalHref.startsWith('http') && !originalHref.startsWith('/')) {
-        link.setAttribute('href', relativePath + originalHref);
+      if (
+        originalHref &&
+        !originalHref.startsWith('http') &&
+        !originalHref.startsWith('/')
+      ) {
+        link.setAttribute('href', basePath + originalHref);
       }
     });
+
 
     // Add stylesheet to shadow root
     const styleLink = document.createElement('link');
@@ -101,8 +107,12 @@ class Footer extends HTMLElement {
     const navLinks = content.querySelectorAll('ul li a');
     navLinks.forEach(link => {
       const originalHref = link.getAttribute('href');
-      if (originalHref && !originalHref.startsWith('http') && !originalHref.startsWith('/')) {
-        link.setAttribute('href', relativePath + originalHref);
+      if (
+        originalHref &&
+        !originalHref.startsWith('http') &&
+        !originalHref.startsWith('/')
+      ) {
+        link.setAttribute('href', basePath + originalHref);
       }
     });
 
